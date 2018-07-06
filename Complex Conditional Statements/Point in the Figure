@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PointInFigure
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int h = int.Parse(Console.ReadLine());
+            int x = int.Parse(Console.ReadLine());
+            int y = int.Parse(Console.ReadLine());
+            string result = "";
+            if (x > 0 && x < h * 3 && y > 0 && y < h) // base/horizontal rectangle
+            {
+                result = "inside";
+            }
+            else if ((x >= 0 && x <= h * 3 && (y == h || y == 0)) || (y >= 0 && y <= h && (x == h * 3 || x == 0)))
+            {
+                result = "border";
+
+            }
+
+            if (x > h && x < h * 2 && y > 0 && y < 4 * h) //vertical rect
+            {
+                result = "inside";
+            }
+            else if ((x >= h && x <= h * 2 && (y == h || y == 4 * h)) || (y >= h && y <= h * 4 && (x == h || x == 2 * h)))
+            {
+                result = "border";
+            }
+            if (result == "")
+            {
+                result = "outside";
+            }
+
+            Console.WriteLine($"{result}");
+        }
+    }
+}
