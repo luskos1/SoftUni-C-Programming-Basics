@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TrapezoidArea
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float b1 = Convert.ToSingle(Console.ReadLine());
+            float b2 = Convert.ToSingle(Console.ReadLine());
+            float h = Convert.ToSingle(Console.ReadLine());
+            float tArea = 0;
+
+            tArea = (b1 + b2) * h / 2f;
+
+            Console.WriteLine(tArea);
+        }
+    }
+}
