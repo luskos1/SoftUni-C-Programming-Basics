@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SquareOfStars
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int len = int.Parse(Console.ReadLine());
+            string star = "*";
+
+            if (len >= 2 && len <= 100)
+            {
+                for (int i = 1; i <= len; i++) // i == line
+                {
+                    for (int j = 1; j <= len; j++)
+                    {
+                        if (i == 1)
+                        {
+                            Console.Write(star);
+                        }
+                        else if (i == len)
+                        {
+                            Console.Write(star);
+                        }
+                        else
+                        {
+                            if (i != 1 && i != len)
+                            {
+                                if (j == 1 || j == len)
+                                {
+                                    Console.Write(star);
+                                } else if(j != len || j != 1)
+                                {
+                                    Console.Write(" ");
+                                }
+                            }
+                        }
+                        
+                    }
+                    Console.WriteLine();
+                }
+            }
+            
+        }
+    }
+}
