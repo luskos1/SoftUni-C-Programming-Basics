@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RectangleArea
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            double y1 = Convert.ToDouble(Console.ReadLine());
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            double y2 = Convert.ToDouble(Console.ReadLine());
+
+            double width = Math.Abs(x1 - x2);
+            double height = Math.Abs(y2 - y1);
+
+            double area = width * height;
+            area = Math.Abs(area);
+            Console.WriteLine(area);
+            double permieter = 2 * (width + height);
+            permieter = Math.Abs(permieter);
+            Console.WriteLine(permieter);
+        }
+    }
+}
