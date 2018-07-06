@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Store
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string product = Console.ReadLine();
+            string city = Console.ReadLine();
+            double qty = double.Parse(Console.ReadLine());
+            double productPrice = 0;
+            switch (product)
+            {
+            case "coffee":
+                switch (city)
+                {
+                    case "Sofia":
+                        productPrice = 0.5;
+                        break;
+                    case "Plovdiv":
+                        productPrice = 0.4;
+                        break;
+                    case "Varna":
+                        productPrice = 0.45;
+                        break;
+                }
+                break;
+                case "water":
+                    switch (city)
+                    {
+                        case "Sofia":
+                            productPrice = 0.8;
+                            break;
+                        case "Plovdiv":
+                            productPrice = 0.7;
+                            break;
+                        case "Varna":
+                            productPrice = 0.7;
+                            break;
+                    }
+                    break;
+                case "beer":
+                    switch (city)
+                    {
+                        case "Sofia":
+                            productPrice = 1.2;
+                            break;
+                        case "Plovdiv":
+                            productPrice = 1.15;
+                            break;
+                        case "Varna":
+                            productPrice = 1.1;
+                            break;
+                    }
+                    break;
+                case "sweets":
+                    switch (city)
+                    {
+                        case "Sofia":
+                            productPrice = 1.45;
+                            break;
+                        case "Plovdiv":
+                            productPrice = 1.3;
+                            break;
+                        case "Varna":
+                            productPrice = 1.35;
+                            break;
+                    }
+                    break;
+                case "peanuts":
+                    switch (city)
+                    {
+                        case "Sofia":
+                            productPrice = 1.6;
+                            break;
+                        case "Plovdiv":
+                            productPrice = 1.5;
+                            break;
+                        case "Varna":
+                            productPrice = 1.55;
+                            break;
+                    }
+                    break;
+            }
+            
+            double sum = productPrice * qty;
+            Console.WriteLine($"{sum:f2}");
+        }
+    }
+}
