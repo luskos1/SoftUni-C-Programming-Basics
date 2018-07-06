@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            char star = '*';
+            char space = ' ';
+            char score = '|';
+            char rightSlash = '/';
+            string scores;
+            string rightSlashes;
+            string stars;
+            string spaces;
+
+            stars = new String(star, n * 2);
+            spaces = new String(space, n);
+            Console.WriteLine(stars + spaces + stars); // exception
+
+            for (int i = 2; i <= n-1; i++)
+            {
+                if ((n % 2 == 1 && i == (n / 2) + 1) || (n % 2 == 0 && i == (n / 2)))
+                {
+                    stars = new string(star, 1);
+                    rightSlashes = new String(rightSlash, (n * 2) - 2);
+                    scores = new String(score, n);
+                    Console.Write(stars + rightSlashes + stars + scores + stars + rightSlashes + stars);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    stars = new string(star, 1);
+                    rightSlashes = new String(rightSlash, (n * 2) - 2);
+                    spaces = new String(space, n);
+                    Console.Write(stars + rightSlashes + stars + spaces + stars + rightSlashes + stars);
+                    Console.WriteLine();
+                }
+            }
+
+            stars = new String(star, n * 2);
+            spaces = new String(space, n);
+            Console.WriteLine(stars + spaces + stars); // exception
+        }
+    }
+}
