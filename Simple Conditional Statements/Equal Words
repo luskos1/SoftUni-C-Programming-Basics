@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Words
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string entry1 = Console.ReadLine();
+            string entry2 = Console.ReadLine();
+
+            entry1 = entry1.ToLower();
+            entry2 = entry2.ToLower();
+
+            if (entry1 == entry2)
+            {
+                Console.WriteLine("yes");
+            }
+            else
+            {
+                Console.WriteLine("no");
+            }
+        }
+    }
+}
