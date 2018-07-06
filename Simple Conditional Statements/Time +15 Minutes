@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+namespace Time_15
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            byte hh = Convert.ToByte(Console.ReadLine());
+            byte mm = Convert.ToByte(Console.ReadLine());
+            string format;
+            if (mm < 45)
+            {
+                format = "H:m";
+            }
+            else
+            {
+                format = "H:mm";
+            }
+            
+            string time = Convert.ToString(hh) + ":" + Convert.ToString(mm);
+            DateTime clock = DateTime.ParseExact(time, format, CultureInfo.InvariantCulture);
+            clock = clock.AddMinutes(15);
+
+            string result = clock.ToString(format);
+
+            Console.WriteLine(result);
+        }
+    }
+}
