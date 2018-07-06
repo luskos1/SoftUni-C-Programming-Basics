@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EvenOddPositions
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            double oddSum = 0;
+            double oddMin = double.MaxValue;
+            double oddMax = double.MinValue;
+            double evenSum = 0;
+            double evenMin = double.MaxValue;
+            double evenMax = double.MinValue;
+
+            for (int i = 1; i <= n; i++)
+            {
+                double num = double.Parse(Console.ReadLine());
+                if (i % 2 == 1)
+                {
+                    oddSum += num;
+                }
+                else if (i % 2 == 0)
+                {
+                    evenSum += num;
+                }
+                if (num > oddMax && i % 2 == 1)
+                {
+                    oddMax = num;
+                }
+                if (num < oddMin && i % 2 == 1)
+                {
+                    oddMin = num;
+                }
+                if (num > evenMax && i % 2 == 0)
+                {
+                    evenMax = num;
+                }
+                if (num < evenMin && i % 2 == 0)
+                {
+                    evenMin = num;
+                }
+            }
+            Console.WriteLine($"OddSum={oddSum},");
+
+            if (oddMin != double.MaxValue)
+            {
+                Console.WriteLine($"OddMin={oddMin},");
+            }
+            else
+            {
+                Console.WriteLine("OddMin=No,");
+            }
+            if (oddMax != double.MinValue)
+            {
+                Console.WriteLine(($"OddMax={oddMax},"));
+            }
+            else
+            {
+                Console.WriteLine("OddMax=No,");
+            }
+
+            Console.WriteLine($"EvenSum={evenSum},");
+
+            if (evenMin != double.MaxValue)
+            {
+                Console.WriteLine($"EvenMin={evenMin},");
+            }
+            else
+            {
+                Console.WriteLine("EvenMin=No,");
+            }
+            if (evenMax != double.MinValue)
+            {
+                Console.WriteLine(($"EvenMax={evenMax},"));
+            }
+            else
+            {
+                Console.WriteLine("EvenMax=No,");
+            }
+        }
+    }
+}
