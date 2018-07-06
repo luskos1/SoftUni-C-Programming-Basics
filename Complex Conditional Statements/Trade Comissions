@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TradeCommision
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string city = Console.ReadLine();
+            double sales = double.Parse(Console.ReadLine());
+
+            var dict = new Dictionary<string, string>();
+
+            string commisionSofia = "5 7 8 12";
+            string commisionVarna = "4.5 7.5 10 13";
+            string commisionPlovdiv = "5.5 8 12 14.5";
+            double sum = 0;
+            int n = 0;
+            dict.Add("Sofia", commisionSofia);
+            dict.Add("Varna", commisionVarna);
+            dict.Add("Plovdiv", commisionPlovdiv);
+
+            foreach (KeyValuePair<string,string> item in dict)
+            {
+                if (item.Key == city)
+                {
+                    string[] words = item.Value.Split(' ');
+                    if (sales >= 0 && sales <= 500)
+                    {
+                        sum = (Convert.ToDouble(words[0]) / 100.0) * sales;
+                        Console.WriteLine($"{sum:f2}");
+                    }
+                    else if (sales > 500 && sales <= 1000)
+                    {
+                        sum = (Convert.ToDouble(words[1]) / 100.0) * sales;
+                        Console.WriteLine($"{sum:f2}");
+                    }
+                    else if (sales > 1000 && sales <= 10000)
+                    {
+                        sum = (Convert.ToDouble(words[2]) / 100.0) * sales;
+                        Console.WriteLine($"{sum:f2}");
+                    }
+                    else if (sales > 10000)
+                    {
+                        sum = (Convert.ToDouble(words[3]) / 100.0) * sales;
+                        Console.WriteLine($"{sum:f2}");
+                    }
+                }
+                else
+                {
+                    n++;
+                }
+            }
+            if (n == 3 || sales < 0)
+            {
+                Console.WriteLine("error");
+            }
+        }
+    }
+}
