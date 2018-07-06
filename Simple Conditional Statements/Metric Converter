@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace MetricConverter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double ammount = double.Parse(Console.ReadLine());
+            string inMetric = Console.ReadLine();
+            string outMetric = Console.ReadLine();
+
+            var dict = new Dictionary<string, double>();
+
+            dict.Add("m", 1);
+            dict.Add("mm", 1000);
+            dict.Add("cm", 100);
+            dict.Add("mi", 0.000621371192);
+            dict.Add("in", 39.3700787);
+            dict.Add("km", 0.001);
+            dict.Add("ft", 3.2808399);
+            dict.Add("yd", 1.0936133);
+
+            double result = (dict[outMetric] / dict[inMetric]) * ammount;
+
+            Console.WriteLine($"{result:f8}");
+        }
+    }
+}
