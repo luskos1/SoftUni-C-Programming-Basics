@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            char star = '*';
+            char space = ' ';
+            char score = '|';
+
+            string spaces = new String(space, n + 1);
+            string stars;
+            Console.WriteLine(spaces + score.ToString());
+
+            for (int i = 1; i <= n; i++)
+            {
+                spaces = new String(space, n - i);
+                stars = new string(star, i);
+                Console.Write(spaces + stars + space.ToString() + score.ToString() + space.ToString() + stars);
+                Console.WriteLine();
+            }
+
+        }
+    }
+}
