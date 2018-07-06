@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cinema
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string projection = Console.ReadLine();
+            int rows = int.Parse(Console.ReadLine());
+            int columns = int.Parse(Console.ReadLine());
+
+            double price = 0;
+            double sum = 0;
+            switch (projection)
+            {
+                case "Premiere":
+                    price = 12.00;
+                    sum = (rows * columns) * price;
+                    Console.WriteLine($"{sum:f2}" + " leva");
+                    break;
+                case "Normal":
+                    price = 7.50;
+                    sum = (rows * columns) * price;
+                    Console.WriteLine($"{sum:f2}" + " leva");
+                    break;
+                case "Discount":
+                    price = 5.00;
+                    sum = (rows * columns) * price;
+                    Console.WriteLine($"{sum:f2}" + " leva");
+                    break;
+                    
+            }
+        }
+    }
+}
