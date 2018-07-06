@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FiguresAreas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string figure = Console.ReadLine();
+            double area = 0;
+            if (figure == "square")
+            {
+                double side = Convert.ToDouble(Console.ReadLine());
+                area = side * side;
+            }
+            else if (figure == "rectangle")
+            {
+                double sideA = Convert.ToDouble(Console.ReadLine());
+                double sideB = Convert.ToDouble(Console.ReadLine());
+                area = sideA * sideB;
+            }
+            else if (figure == "circle")
+            {
+                double r = Convert.ToDouble(Console.ReadLine());
+                area = Math.PI * r * r;
+            }
+            else if(figure == "triangle")
+            {
+                double b = Convert.ToDouble(Console.ReadLine());
+                double h = Convert.ToDouble(Console.ReadLine());
+                area = (b * h) / 2.0;
+                
+            }
+            Console.WriteLine("{0}", Math.Round(area,3));
+        }
+    }
+}
