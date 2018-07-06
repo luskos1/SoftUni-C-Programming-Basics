@@ -1,0 +1,85 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CurrencyConvertor
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double ammount = Convert.ToDouble(Console.ReadLine());
+            string inCurr = Console.ReadLine();
+            string outCurr = Console.ReadLine();
+            double bgnRate = 1;
+            double usdRate = 1.79549;
+            double gpbRate = 2.53405;
+            double eurRate = 1.95583;
+            double summ = 0;
+            if (inCurr == "USD")
+            {
+                if (outCurr == "BGN")
+                {
+                    summ = (usdRate / bgnRate) * ammount;
+                }
+                else if (outCurr == "EUR")
+                {
+                    summ = (usdRate / eurRate) * ammount;
+                }
+                else if (outCurr == "GBP")
+                {
+                    summ = (usdRate / gpbRate) * ammount;
+                }
+            }
+            else if (inCurr == "EUR")
+            {
+                if (outCurr == "BGN")
+                {
+                    summ = (eurRate / bgnRate) * ammount;
+                }
+                else if (outCurr == "USD")
+                {
+                    summ = (eurRate / usdRate) * ammount;
+                }
+                else if (outCurr == "GBP")
+                {
+                    summ = (eurRate / gpbRate) * ammount;
+                }
+            }
+            else if (inCurr == "GBP")
+            {
+                if (outCurr == "BGN")
+                {
+                    summ = (gpbRate / bgnRate) * ammount;
+                }
+                else if (outCurr == "USD")
+                {
+                    summ = (gpbRate / usdRate) * ammount;
+                }
+                else if (outCurr == "EUR")
+                {
+                    summ = (gpbRate / eurRate) * ammount;
+                }
+            }
+            else if (inCurr == "BGN")
+            {
+                if (outCurr == "EUR")
+                {
+                    summ = (bgnRate / eurRate) * ammount;
+                }
+                else if (outCurr == "USD")
+                {
+                    summ = (bgnRate / usdRate) * ammount;
+                }
+                else if (outCurr == "GBP")
+                {
+                    summ = (bgnRate / gpbRate) * ammount;
+                }
+            }
+
+            Console.WriteLine("{0} {1}", Math.Round(summ,2),outCurr);
+        }
+    }
+}
