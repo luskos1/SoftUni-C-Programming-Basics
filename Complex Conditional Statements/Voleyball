@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Voleyball
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string year = Console.ReadLine();
+            int holidays = int.Parse(Console.ReadLine());
+            int weekendsInTown = int.Parse(Console.ReadLine());
+            double weekends = 48;
+
+            double weekendsInCapitol = (weekends - weekendsInTown) ;
+            double playsInCapitol = weekendsInCapitol * (3.0 / 4.0);
+            double playsInTown = weekendsInTown;
+            double playsOnHolidays = holidays * (2.0 / 3.0);
+            double totalPlays = playsInCapitol + playsInTown + playsOnHolidays;
+
+            if (year == "normal")
+            {
+                totalPlays = (int)Math.Floor(totalPlays);
+                Console.WriteLine(totalPlays);
+            }
+            else
+            {
+                double extraPlays = (15.0 / 100.0) * totalPlays;
+                totalPlays = totalPlays + extraPlays;
+                totalPlays = (int)Math.Floor(totalPlays);
+                Console.WriteLine(totalPlays);
+            }
+        }
+    }
+}
