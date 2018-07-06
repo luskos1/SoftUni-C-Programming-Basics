@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TriangleOf55Stars
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string star = "*";
+            string line = "*";
+            for (int i = 1; i <= 10; i++) {
+                Console.Write(line);
+                line = line + star;
+                Console.WriteLine();
+            }
+        }
+    }
+}
