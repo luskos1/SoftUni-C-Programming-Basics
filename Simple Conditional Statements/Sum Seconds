@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Competitors
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int compTime1 = Convert.ToInt32(Console.ReadLine());
+            int compTime2 = Convert.ToInt32(Console.ReadLine());
+            int compTime3 = Convert.ToInt32(Console.ReadLine());
+            int fullTime = compTime1 + compTime2 + compTime3;
+            int min = Convert.ToInt32((compTime1 + compTime2 + compTime3) / 60);
+            int sec = fullTime - (min * 60);
+            string minutes = Convert.ToString(min);
+            string seconds = "";
+            if (sec >= 10)
+            {
+                seconds = Convert.ToString(sec);
+            }
+            else if (sec <= 9 && sec >= 0)
+            {
+                seconds = "0" + Convert.ToString(sec);
+            }
+
+            Console.WriteLine("{0}:{1}",minutes,seconds);
+        }
+    }
+}
